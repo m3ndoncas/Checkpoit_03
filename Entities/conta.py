@@ -1,7 +1,7 @@
-
 class Conta:
-    def __init__(self, numeroConta):
+    def __init__(self, numeroConta, cliente):
         self.numeroConta = numeroConta
+        self.cliente = cliente
         self.__saldo = 0.0
 
     def getSaldo(self):
@@ -26,4 +26,6 @@ class Conta:
                 return self.__saldo
             else:
                 print("Saldo insuficiente")
+
+
 

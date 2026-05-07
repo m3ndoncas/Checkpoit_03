@@ -1,18 +1,15 @@
-from conta import Conta
+from .conta import Conta
 
 class ContaPoupanca(Conta):
-    def __init__(self, numeroConta):
-        super().__init__(numeroConta)
+    def __init__(self, numeroConta, cliente):
+        super().__init__(numeroConta, cliente)
 
     def render_juros(self):
-        taxa = 0.02
-        self.__saldo += self.__saldo * taxa
-
+        taxa = 0.0101
+        rendimento = self.getSaldo() * taxa
+        self.depositar(rendimento)
 
 
 
 if __name__ == '__main__':
     contaPoupanca = ContaPoupanca(14567)
-    print("poupanca saldo", contaPoupanca.getSaldo())
-    contaPoupanca.depositar('abc')
-    print("poupanca saldo", contaPoupanca.getSaldo())

@@ -1,8 +1,8 @@
-from conta import Conta
+from .conta import Conta
 
 class ContaCorrente(Conta):
-    def __init__(self, numeroConta):
-        super().__init__(numeroConta)
+    def __init__(self, numeroConta, cliente):
+        super().__init__(numeroConta, cliente)
 
 
     def sacar(self, valor):
@@ -13,6 +13,10 @@ class ContaCorrente(Conta):
             super().sacar(saque_total)
         else:
             print("Saldo insuficiente")
+
+
+
+
 
 
 
